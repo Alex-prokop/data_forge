@@ -3,7 +3,7 @@ services:
   backend:
     image: my-backend
     ports:
-      - '5001:5000'
+      - '5000:5000'
     environment:
       - NODE_ENV=production
     restart: always
