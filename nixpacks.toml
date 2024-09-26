@@ -1,0 +1,6 @@
+
+[backend]
+command = "npm install --prefix backend && npm run build --prefix backend && npm run start --prefix backend"
+
+[frontend]
+command = "npm install --prefix frontend && npm run build --prefix frontend"
