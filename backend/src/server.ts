@@ -1,10 +1,21 @@
-import dotenv from 'dotenv';
-import app from './app';
+import express, { Request, Response } from 'express';
+import cors from 'cors';
+import { getData, exportData } from './controllers/dataController';
 
-dotenv.config();
+const app = express();
 
-const PORT = Number(process.env.PORT) || 5000;
+// Настройка CORS
+const corsOptions = {
+  origin: 'https://dataforge-production.up.railway.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+};
 
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running on port ${PORT}`);
-});
+app.use(cors(corsOptions));
+app.use(express.json());
+
+app.get('/data', getData);
+app.get('/export', exportData);
+
+export default app;
