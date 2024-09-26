@@ -1,16 +1,8 @@
 {
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
-    "services": {
-      "backend": {
-        "buildCommand": "cd backend && npm install && npm run build",
-        "startCommand": "cd backend && npm start"
-      },
-      "frontend": {
-        "buildCommand": "cd frontend && npm install && npm run build",
-        "startCommand": "cd frontend && npm run preview -- --port $PORT"
-      }
-    }
+    "builder": "DOCKER",
+    "dockerfilePath": "./docker-compose.yml"
   },
   "deploy": {
     "runtime": "V2",
