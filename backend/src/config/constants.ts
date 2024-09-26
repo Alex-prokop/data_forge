@@ -6,4 +6,4 @@ export const DEFAULT_PAGE_NUMBER = 1;
 export const DEFAULT_REGION = 'us';
 export const DEFAULT_ERROR_COUNT = 0;
 export const INITIAL_PAGE_NUMBER = 1;
-export const DEFAULT_PORT = 5001;
+export const DEFAULT_PORT = 5000;

@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "dist/server.js",  
+  "main": "dist/server.js",
   "scripts": {
     "start": "node dist/server.js",
     "build": "tsc",
@@ -17,6 +17,7 @@
     "@faker-js/faker": "^9.0.2",
     "cors": "^2.8.5",
     "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "libphonenumber-js": "^1.11.9",
     "seedrandom": "^3.0.5"

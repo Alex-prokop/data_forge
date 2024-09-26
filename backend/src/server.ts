@@ -1,7 +1,9 @@
+import dotenv from 'dotenv';
 import app from './app';
-import { DEFAULT_PORT } from './config/constants';
 
-const PORT = process.env.PORT || DEFAULT_PORT;
+dotenv.config();
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, (err?: Error) => {
   if (err) {

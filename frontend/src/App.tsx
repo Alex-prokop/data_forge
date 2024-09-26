@@ -3,8 +3,17 @@ import axios from 'axios';
 import { Container, Typography } from '@mui/material';
 import Header from './components/Header';
 import DataDisplay from './components/DataDisplay';
-
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+import {
+  INITIAL_PAGE,
+  INITIAL_SEED,
+  RANDOM_SEED_MAX,
+  INITIAL_ERRORS,
+  DEFAULT_REGION,
+  INITIAL_HAS_MORE,
+  INITIAL_LOAD_COUNT,
+  SCROLL_LOAD_COUNT,
+  API_BASE_URL,
+} from './constants';
 
 interface DataItem {
   id: number;
@@ -13,15 +22,6 @@ interface DataItem {
   phone: string;
   identifier: string;
 }
-
-const INITIAL_PAGE = 1;
-const INITIAL_SEED = 42;
-const RANDOM_SEED_MAX = 1000;
-const INITIAL_ERRORS = 0;
-const DEFAULT_REGION = 'us';
-const INITIAL_HAS_MORE = true;
-const INITIAL_LOAD_COUNT = 20;
-const SCROLL_LOAD_COUNT = 10;
 
 const App: React.FC = () => {
   const [data, setData] = useState<DataItem[]>([]);
