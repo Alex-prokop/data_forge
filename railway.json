@@ -4,8 +4,7 @@
     {
       "name": "backend",
       "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "./backend/Dockerfile"
+        "builder": "NIXPACKS"
       },
       "deploy": {
         "startCommand": "npm run start",
@@ -18,8 +17,7 @@
     {
       "name": "frontend",
       "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "./frontend/Dockerfile"
+        "builder": "NIXPACKS"
       },
       "deploy": {
         "startCommand": "npm run start",
