@@ -16,14 +16,8 @@ COPY . .
 # Собираем приложение
 RUN npm run build
 
-# Используем Nginx для сервировки готового фронтенд-приложения
-FROM nginx:alpine
-
-# Копируем скомпилированные файлы фронтенда из предыдущего этапа
-COPY --from=build /src/dist /usr/share/nginx/html
-
-# Экспонируем порт, чтобы Nginx мог обслуживать приложение
+# Экспонируем порт, чтобы приложение было доступно
 EXPOSE 80
 
-# Запускаем Nginx
-CMD ["nginx", "-g", "daemon off;"]
+# Запускаем Vite preview вместо Nginx
+CMD ["npm", "run", "start"]
