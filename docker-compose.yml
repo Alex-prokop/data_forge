@@ -1,14 +1,19 @@
-# version: '3'
 services:
   backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     image: my-backend
     ports:
-      - '5000:5000'
+      - '5001:5000'
     environment:
       - NODE_ENV=production
     restart: always
 
   frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     image: my-frontend
     ports:
       - '80:80'
@@ -17,23 +22,3 @@ services:
     environment:
       - NODE_ENV=production
     restart: always
-# version: '3'
-# services:
-#   backend:
-#     build: ./backend
-#     ports:
-#       - '5001:5000'
-#     volumes:
-#       - ./backend:/app
-#     environment:
-#       - NODE_ENV=development
-
-#   frontend:
-#     build: ./frontend
-#     ports:
-#       - '3000:80'
-#     volumes:
-#       - ./frontend:/app
-#       - /app/node_modules
-#     depends_on:
-#       - backend
