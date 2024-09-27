@@ -20,4 +20,4 @@ RUN npm run build
 EXPOSE 80
 
 # Запускаем Vite preview вместо Nginx
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "preview", "--", "--port", "80"]
